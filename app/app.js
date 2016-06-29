@@ -2,23 +2,23 @@
 // All stuff below is just to show you how it works. You can delete all of it.
 
 // Use new ES6 modules syntax for everything.
-import os from 'os'; // native node.js module
-import { remote } from 'electron'; // native electron module
-import jetpack from 'fs-jetpack'; // module loaded from npm
-import { first_page_title } from './hello_world/first_page'; // code authored by you in this project
-import env from './env';
+import os from 'os' // native node.js module
+import { remote } from 'electron' // native electron module
+import jetpack from 'fs-jetpack' // module loaded from npm
+// import { first_page_img } from './hello_world/first_page' // code authored by you in this project
+import env from './env'
 
-console.log('Loaded environment variables:', env);
+console.log('Loaded environment variables:', env)
 
-var app = remote.app;
-var appDir = jetpack.cwd(app.getAppPath());
+var app = remote.app
+var appDir = jetpack.cwd(app.getAppPath())
 
 // Holy crap! This is browser window with HTML and stuff, but I can read
 // here files like it is node.js! Welcome to Electron world :)
-console.log('The author of this app is:', appDir.read('package.json', 'json').author);
+console.log('The author of this app is:', appDir.read('package.json', 'json').author)
 
 document.addEventListener('DOMContentLoaded', function () {
-  document.getElementById('first_page_title').innerHTML = first_page_title();
-  document.getElementById('platform-info').innerHTML = os.platform();
-  document.getElementById('env-name').innerHTML = env.name;
-});
+  // document.getElementById('first_page').innerHTML = first_page()
+  // document.getElementById('platform-info').innerHTML = os.platform()
+  // document.getElementById('env-name').innerHTML = env.name
+})
